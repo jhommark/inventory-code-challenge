@@ -43,6 +43,8 @@ class OrderProcessor implements OrderProcessorInterface
             $this->inventory->checkBeginningStocksForDay($i);
 
             foreach ($orders as $orderLine) {
+                $this->orderCanceled = false;
+                
                 foreach ($orderLine as $productId => $quantity) {
                     if ($this->inventory->getStockLevel($productId) < $quantity) {
                         $this->cancelOrder();

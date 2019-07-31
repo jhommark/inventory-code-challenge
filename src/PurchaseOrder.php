@@ -36,7 +36,7 @@ class PurchaseOrder implements PurchaseOrderInterface
     public function getPurchasedReceivedTotal(int $productId): int {
         $total = 0;
 
-        for ($i = 0; $i < 7; $i++) { 
+        for ($i = 0; $i < 7; $i++) {
             $total += $this->getOrderForDay($i, $productId);
         }
 
@@ -48,6 +48,12 @@ class PurchaseOrder implements PurchaseOrderInterface
      * @return int
      */
     public function getPurchasedPendingTotal(int $productId): int {
-        return 0;
+        $total = 0;
+
+        for ($i = 5; $i < 7; $i++) {
+            $total += $this->orders[$i][$productId] ?? 0;
+        }
+
+        return $total;
     }
 }
