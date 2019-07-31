@@ -4,6 +4,9 @@ use PHPUnit\Framework\TestCase;
 
 final class ProductsTest extends TestCase
 {
+    /**
+     * @covers \Products::BROWNIE
+     */
     public function testHasBrownie(): void
     {
         $this->assertEquals(
@@ -12,6 +15,9 @@ final class ProductsTest extends TestCase
         );
     }
 
+    /**
+     * @covers \Products::LAMINGTON
+     */
     public function testHasLamington(): void
     {
         $this->assertEquals(
@@ -20,6 +26,9 @@ final class ProductsTest extends TestCase
         );
     }
 
+    /**
+     * @covers \Products::BLUEBERRY_MUFFIN
+     */
     public function testHasBlueBerryMuffin(): void
     {
         $this->assertEquals(
@@ -28,6 +37,9 @@ final class ProductsTest extends TestCase
         );
     }
 
+    /**
+     * @covers \Products::CROISSANT
+     */
     public function testHasCroissant(): void
     {
         $this->assertEquals(
@@ -36,6 +48,9 @@ final class ProductsTest extends TestCase
         );
     }
 
+    /**
+     * @covers \Products::CHOCOLATE_CAKE
+     */
     public function testHasChocolateCake(): void
     {
         $this->assertEquals(
